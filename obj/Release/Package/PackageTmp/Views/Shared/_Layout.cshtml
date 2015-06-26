@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SweetStack Ltd | @ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+    @Scripts.Render("https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js")
+    @Scripts.Render("~/Scripts/Site.js")
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="~/Scripts/Site.js"></script>
+    <link rel="icon" type="image/ico" href="~/Content/Images/favicon.ico">
+</head>
+<body>
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>*@
+    <div class="top">
+        <div class="container top-menu">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 logo">
+                <img class="img-responsive logo" src="~/Content/Images/logo.png" alt="SweetStack logo" />
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-7 navi">
+                <button class="hotdogs" onclick="mobMenu()">
+                    <img id="hotdog-img" src="~/Content/Images/hotdogs.png" /></button>
+                <ul id="fullNav" class="navig">
+                    <li>@Html.ActionLink("home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("about", "About", "Home")</li>
+                    <li>@Html.ActionLink("products", "Products", "Home")</li>
+                    <li>@Html.ActionLink("services", "Services", "Home")</li>
+                    <li>@Html.ActionLink("contact", "Contact", "Home")</li>
+                </ul>
+
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-1 address">
+                SweetStack Ltd <br />
+                Company Number 09292167 <br />
+                International House <br />
+                24 Holborn Viaduct <br />
+                London <br />
+                EC1A 2BN<br />
+            </div>
+        </div>
+    </div>
+    <div class="mobNav">
+        <ul id="mobNav" class="navig mobNav">
+            <li>@Html.ActionLink("home", "Index", "Home")</li>
+            <li>@Html.ActionLink("about", "About", "Home")</li>
+            <li>@Html.ActionLink("products", "Products", "Home")</li>
+            <li>@Html.ActionLink("services", "Services", "Home")</li>
+            <li>@Html.ActionLink("contact", "Contact", "Home")</li>
+        </ul>
+    </div>
+    <div class="container body-content">
+        @*<div class="hero-space"></div>*@
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="smallAddress">
+                <small>
+                    SweetStack Ltd,
+                    Company Number 09292167,
+                    International House,
+                    24 Holborn Viaduct,
+                    London,
+                    EC1A 2BN
+                </small>
+            </div>
+            <p class="cr">&copy; @DateTime.Now.Year - SweetStack Ltd</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
